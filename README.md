@@ -22,7 +22,7 @@ That is why at the moment it looks like this. I only modified the files that I n
 looks the same. I did not even rename the executable files or the
 comments LUL.
 
-The thing you are looking for is in the `wordle.c` file. I did this in a [livestream](https://twitch.tv/danirod_) in a couple hours so it is not the best quality and not the best commented code though. Please be considerate at me. I might cleanup this in the future. Or not.
+The thing you are looking for is in the `wordleOS/wordle.c` file. I did this in a [livestream](https://twitch.tv/danirod_) in a couple hours so it is not the best quality and not the best commented code though. Please be considerate at me. I might cleanup this in the future. Or not.
 
 To download a ISO, check the releases for an ISO that you can boot
 in a virtual machine like QEMU, or in an old computer. I suspect this is

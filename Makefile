@@ -1,68 +1,68 @@
-FILES = nativeos/hardware/kbd.c \
-	nativeos/hardware/vgafb.c \
-	nativeos/hardware/port.c \
-	nativeos/hardware/rtclock.c \
-	nativeos/hardware/spinlock.c \
-	nativeos/hardware/pctimer.c \
-	nativeos/stdkern/strcat.c \
-	nativeos/stdkern/strchr.c \
-	nativeos/stdkern/ringbuf.c \
-	nativeos/stdkern/list.c \
-	nativeos/stdkern/strlen.c \
-	nativeos/stdkern/memcpy.c \
-	nativeos/stdkern/strcmp.c \
-	nativeos/stdkern/memset.c \
-	nativeos/stdkern/strsep.c \
-	nativeos/stdkern/strcpy.c \
-	nativeos/stdkern/strdup.c \
-	nativeos/vfs/fs_devfs.c \
-	nativeos/vfs/fs_fsops.c \
-	nativeos/vfs/fs_path.c \
-	nativeos/vfs/fs_vfs.c \
-	nativeos/i386/multiboot.S \
-	nativeos/i386/kernel/cpu/idt.c \
-	nativeos/i386/kernel/cpu/lidt.S \
-	nativeos/i386/kernel/mem/alloc.c \
-	nativeos/i386/kernel/mem/heap.c \
-	nativeos/i386/kernel/mem/pmm.c \
-	wordle.c \
-	kern_main.c \
-	locore.S
+FILES = support/hardware/kbd.c \
+	support/hardware/vgafb.c \
+	support/hardware/port.c \
+	support/hardware/rtclock.c \
+	support/hardware/spinlock.c \
+	support/hardware/pctimer.c \
+	support/stdkern/strcat.c \
+	support/stdkern/strchr.c \
+	support/stdkern/ringbuf.c \
+	support/stdkern/list.c \
+	support/stdkern/strlen.c \
+	support/stdkern/memcpy.c \
+	support/stdkern/strcmp.c \
+	support/stdkern/memset.c \
+	support/stdkern/strsep.c \
+	support/stdkern/strcpy.c \
+	support/stdkern/strdup.c \
+	support/vfs/fs_devfs.c \
+	support/vfs/fs_fsops.c \
+	support/vfs/fs_path.c \
+	support/vfs/fs_vfs.c \
+	support/i386/multiboot.S \
+	support/i386/kernel/cpu/idt.c \
+	support/i386/kernel/cpu/lidt.S \
+	support/i386/kernel/mem/alloc.c \
+	support/i386/kernel/mem/heap.c \
+	support/i386/kernel/mem/pmm.c \
+	wordleOS/wordle.c \
+	wordleOS/kern_main.c \
+	wordleOS/locore.S
 
-OBJECTS = nativeos/hardware/kbd.o \
-	nativeos/hardware/vgafb.o \
-	nativeos/hardware/port.o \
-	nativeos/hardware/rtclock.o \
-	nativeos/hardware/spinlock.o \
-	nativeos/hardware/pctimer.o \
-	nativeos/stdkern/strcat.o \
-	nativeos/stdkern/strchr.o \
-	nativeos/stdkern/ringbuf.o \
-	nativeos/stdkern/list.o \
-	nativeos/stdkern/strlen.o \
-	nativeos/stdkern/memcpy.o \
-	nativeos/stdkern/strcmp.o \
-	nativeos/stdkern/memset.o \
-	nativeos/stdkern/strsep.o \
-	nativeos/stdkern/strcpy.o \
-	nativeos/stdkern/strdup.o \
-	nativeos/vfs/fs_devfs.o \
-	nativeos/vfs/fs_fsops.o \
-	nativeos/vfs/fs_path.o \
-	nativeos/vfs/fs_vfs.o \
-	nativeos/i386/multiboot.o \
-	nativeos/i386/kernel/cpu/idt.o \
-	nativeos/i386/kernel/cpu/lidt.o \
-	nativeos/i386/kernel/mem/alloc.o \
-	nativeos/i386/kernel/mem/heap.o \
-	nativeos/i386/kernel/mem/pmm.o \
-	wordle.o \
-	kern_main.o \
-	locore.o
+OBJECTS = support/hardware/kbd.o \
+	support/hardware/vgafb.o \
+	support/hardware/port.o \
+	support/hardware/rtclock.o \
+	support/hardware/spinlock.o \
+	support/hardware/pctimer.o \
+	support/stdkern/strcat.o \
+	support/stdkern/strchr.o \
+	support/stdkern/ringbuf.o \
+	support/stdkern/list.o \
+	support/stdkern/strlen.o \
+	support/stdkern/memcpy.o \
+	support/stdkern/strcmp.o \
+	support/stdkern/memset.o \
+	support/stdkern/strsep.o \
+	support/stdkern/strcpy.o \
+	support/stdkern/strdup.o \
+	support/vfs/fs_devfs.o \
+	support/vfs/fs_fsops.o \
+	support/vfs/fs_path.o \
+	support/vfs/fs_vfs.o \
+	support/i386/multiboot.o \
+	support/i386/kernel/cpu/idt.o \
+	support/i386/kernel/cpu/lidt.o \
+	support/i386/kernel/mem/alloc.o \
+	support/i386/kernel/mem/heap.o \
+	support/i386/kernel/mem/pmm.o \
+	wordleOS/wordle.o \
+	wordleOS/kern_main.o \
+	wordleOS/locore.o
 
 
 wordle.elf: $(OBJECTS)
-	ld.lld -nostdlib -T kernel.ld $(OBJECTS) -o wordle.elf
+	ld.lld -nostdlib -T wordleOS/kernel.ld $(OBJECTS) -o wordle.elf
 
 GRUB_ROOT = $(shell dirname `which grub-mkrescue`)/..
 wordle.iso: wordle.elf
